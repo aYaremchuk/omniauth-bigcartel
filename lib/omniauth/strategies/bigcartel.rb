@@ -5,13 +5,10 @@ module OmniAuth
     class Bigcartel < OmniAuth::Strategies::OAuth2
       option :name, :bigcartel
 
-      option :client_options, site: 'https://api.bigcartel.com'
+      option :client_options, site: 'https://my.bigcartel.com'
 
 
       uid do
-        # Rails.logger "======================================================"
-        # Rails.logger access_token
-        # Rails.logger "======================================================"
         access_token.params['store']['id']
       end
 
